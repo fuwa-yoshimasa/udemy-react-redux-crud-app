@@ -1,16 +1,25 @@
 const App = () => {
+    const profiles = [{ name: "Taro", age: 10 }, { name: "Hanako", age: 5 }, { name: "A" }];
+
     return (
         <>
-            <label htmlFor="bar">bar</label>
-            <input
-                type="text"
-                id="bar"
-                onClick={() => {
-                    console.log("click");
-                }}
-            ></input>
+            {profiles.map((profile, index) => {
+                return <User name={profile.name} age={profile.age} key={index} />;
+            })}
         </>
     );
+};
+
+const User = (props) => {
+    return (
+        <div>
+            User : {props.name} / {props.age}
+        </div>
+    );
+};
+
+User.defaultProps = {
+    age: 1,
 };
 
 export default App;
