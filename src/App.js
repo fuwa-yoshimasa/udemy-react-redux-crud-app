@@ -1,4 +1,4 @@
-function App() {
+const App = () => {
     return (
         <>
             <label htmlFor="bar">bar</label>
@@ -11,6 +11,6 @@ function App() {
             ></input>
         </>
     );
-}
+};
 
 export default App;
